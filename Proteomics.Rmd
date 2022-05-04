@@ -617,11 +617,11 @@ DoGSEA_1 <- function(InputData, OutputfileName){
                 y = "padj",#p-value or q-value
                 xlab = "NES",
                 ylab = bquote(~-Log[10]~p.adj),#(~-Log[10]~adjusted~italic(P))
-                selectLab = c("KEGG_OXIDATIVE_PHOSPHORYLATION","HALLMARK_OXIDATIVE_PHOSPHORYLATION","REACTOME_RESPIRATORY_ELECTRON_TRANSPORT","REACTOME_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT", "HALLMARK_UNFOLDED_PROTEIN_RESPONSE", "REACTOME_MITOCHONDRIAL_PROTEIN_IMPORT", "ATF4_Han", "BIOCARTA_EIF_PATHWAY", "BIOCARTA_EIF2_PATHWAY", "HALLMARK_FATTY_ACID_METABOLISM", "REACTOME_SYNTHESIS_OF_VERY_LONG_CHAIN_FATTY_ACYL_COAS"),
+                selectLab = c("KEGG_OXIDATIVE_PHOSPHORYLATION","HALLMARK_OXIDATIVE_PHOSPHORYLATION","REACTOME_RESPIRATORY_ELECTRON_TRANSPORT","REACTOME_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT", "HALLMARK_UNFOLDED_PROTEIN_RESPONSE", "REACTOME_MITOCHONDRIAL_PROTEIN_IMPORT", "ATF4_Han", "BIOCARTA_EIF_PATHWAY", "BIOCARTA_EIF2_PATHWAY", "HALLMARK_FATTY_ACID_METABOLISM", "REACTOME_SYNTHESIS_OF_VERY_LONG_CHAIN_FATTY_ACYL_COAS", "HALLMARK_ADIPOGENESIS"),
                 pCutoff = 0.25,
                 FCcutoff = 0.5,#Cut off Log2FC, automatically 2
                 pointSize = 3,
-                labSize = 1,
+                labSize = 0.2,
                 colCustom = keyvals,
                 titleLabSize = 16,
                 col=c("black", "grey", "grey", "purple"),#if you want to change colors
@@ -632,9 +632,9 @@ DoGSEA_1 <- function(InputData, OutputfileName){
                 #xlim = c(-3.5,2.5),
                 #ylim = c(0,1.5),
                 ylim = c(0,((-log10(Reduce(min,Volcano1$padj))))+0.05),
-                #drawConnectors = TRUE,
-                #widthConnectors = 0.5,
-                #colConnectors = "black",
+                drawConnectors = TRUE,
+                widthConnectors = 0.5,
+                colConnectors = "black",
                 cutoffLineType = "dashed",
                 cutoffLineCol = "black",
                 cutoffLineWidth = 0.5,
