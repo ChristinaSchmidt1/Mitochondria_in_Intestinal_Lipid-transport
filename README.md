@@ -1,1 +1,60 @@
-# Mitochondria_in_Intestinal_Lipid-transport
+# **Mitochondria regulate dietary lipid processing in enterocytes**
+*Chrysanthi Moschandrea[^1][^2] , Vangelis Kondylis[^1][^2][^3], Marija Herholz[^2][^4], Karolina Szczepanowska[^2][^4], Robin Schwarzer[^1][^2], Ioannis Evangelakos[^5], Markus Heine[^5], Michelle Y. Jaeckstein[^5], Christina Schmidt[^6], Ming Yang[^6], Efterpi Nikitopoulou[^6], Theresa Bock[^1][^2], Marcus Krüger[^1][^2], Susanne Brodesser[^2], Christian Frezza[^6], Joerg Heeren[^5], Aleksandra Trifunovic[^2][^3][^4], Manolis Pasparakis[^1][^2][^3]*
+
+##
+**The notebook contains:** 
+RNAseq, Proteomics and Metabolomics data of total small intestinal proximal tissue from DARS2tamIEC-KO mice (RNAseq) and DARS2-deficient intestinal epithelial cell (IECs, Proteomics & Metabolomics)
+
+## Reproducibility
+Code for the R analysis can be reproduced by following the scripts in `RNAseq.Rmd`, `Proteomics.Rmd`, `Metabolomics.Rmd`. This includes data analysis and all subsequent tables and plots.
+
+Signatures used for pathway analysis where downloaded from [MSigDB](https://www.gsea-msigdb.org/gsea/msigdb) apart from the ATF4 signature `41556_2013_BFncb2738_MOESM48_ESM (1).csv`, which was downloaded directly from the publication of [Han et al.](https://www.nature.com/articles/ncb2738.pdf), and safed in the folder ***"InputData/Signatures_for_GSEA"***.
+
+Metabolic signatures used for pathway analysis where manually assigned based on our a priori knowledge.
+
+List of mouse mitochondria electron transport chain complexes where extracted from [Petros et al.](https://www.cell.com/cell-reports/comments/S2211-1247(17)31412-2)
+
+## Data
+### RNAseq
+
+### Proteomics
+The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Proteomics"***:
+
+- `20210328_proteinGroups_TB.csv` (LFQ values and the results of  the differential expression analysis was provided by Theresa Bock, Krüger Lab)
+- `Petros et al_Mouse-ETC-Complexes.csv` (Mitochondria electron transport chain complexes from [Petros et al.](https://www.cell.com/cell-reports/comments/S2211-1247(17)31412-2))
+
+Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\Proteomics"***:
+
+- `ORA_Log2FCbg0.5_padj0.05_TGvWT.csv`
+- `ORA_Log2FCsm-0.5_padj0.05_TGvWT.csv`
+- `GSEA_result_KEGG-Hallmark-Reactome-Biocarta-ATF4_TGvWT_.csv`
+- `GSEA_result_GO-terms_TGvWT_.csv`
+
+### Metabolomics
+The Metabolomics data of the IECs will be deposited with the manuscript (under revision). LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Metabolomics"***:
+
+- `IECs_RawData.csv` (Metabolomics results)
+- `Tissue_RawData.csv` (Metabolomics results)
+- `Template_MetabolicPathways.csv` (Metabolite names and associated pathways)
+
+After performing data filtering and normalisation (80%-filtering rule, missing value imputation, total/ion count normalisation) and outlier detection based on quality control (muma analysis, for details see html and folder "Muma"), the results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+
+- `Sheet2_MVI-TIC-normalised_OutliersMarked.csv`
+
+Using the normalised data Sheet2_MVI-TIC-normalised_OutliersMarked.csv, we removed the outliers and calculated the mean of the analytical replicates. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+
+- `Sheet3_MVI-TIC-normalised_Means.csv`
+
+Differential metabolite analysis comparing KO versus WT. Here we performed the t-Test and p-value adjustment using Benjamini Hochberg. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+
+- `Sheet4_DMA_TGvWT.csv`
+
+## Figures
+Generated figures can be found in the ***html files*** or in the folder ***"Figures"***.
+
+[^1]: Institute for Genetics, University of Cologne, Cologne, Germany.
+[^2]: Cologne Excellence Cluster on Cellular Stress Responses in Aging-Associated Diseases (CECAD), University of Cologne, Cologne, Germany.
+[^3]: Center for Molecular Medicine (CMMC), University of Cologne, Cologne, Germany.
+[^4]: Institute for Mitochondrial Diseases and Aging, Medical Faculty, University of Cologne, Cologne, Germany
+[^5]: Department of Biochemistry and Molecular Cell Biology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany
+[^6]: MRC Cancer Unit, University of Cambridge, Hutchison/MRC Research Centre, Box 197, Cambridge Biomedical Campus, Cambridge CB2 0XZ, UK
