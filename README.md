@@ -16,6 +16,17 @@ List of mouse mitochondria electron transport chain complexes where extracted fr
 
 ## Data
 ### RNAseq
+The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping and counting) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\RNAseq"***:
+
+- `.csv` Raw count matrix (Provided by Ulrike Göbel)
+
+First, Differential Expression Analysis using DESeq2 was performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
+
+- `.csv`
+
+Next, Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
+
+- `.csv`
 
 ### Proteomics
 The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Proteomics"***:
@@ -23,7 +34,7 @@ The Proteomics data of the IECs will be deposited with the manuscript (under rev
 - `20210328_proteinGroups_TB.csv` (LFQ values and the results of  the differential expression analysis was provided by Theresa Bock, Krüger Lab)
 - `Petros et al_Mouse-ETC-Complexes.csv` (Mitochondria electron transport chain complexes from [Petros et al.](https://www.cell.com/cell-reports/comments/S2211-1247(17)31412-2))
 
-Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\Proteomics"***:
+GSEA and ORA were performed and results will be available upon publication in the folder ***"OutputData\Proteomics"***:
 
 - `ORA_Log2FCbg0.5_padj0.05_TGvWT.csv`
 - `ORA_Log2FCsm-0.5_padj0.05_TGvWT.csv`
