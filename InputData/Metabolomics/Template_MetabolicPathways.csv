@@ -1,0 +1,208 @@
+Metabolite,Pathway,Name_on_Plot
+1-methyladenosine,unknown,NO
+1-methylhistidine,amino acid and conjugate,NO
+1-methylnicotinamide,unknown,NO
+2-hydroxyglutarate,unknown,NO
+3-methylhistidine,amino acid and conjugate,NO
+3-sulfinoalanine,unknown,NO
+4-aminobutyrate,unknown,NO
+4-guanidinobutanoate,amino acid and conjugate,NO
+4-hydroxyphenyllactate,unknown,NO
+4-hydroxyproline,amino acid and conjugate,NO
+5-aminoimidazole ribotide,purine metabolism,NO
+5-aminopentanoate,unknown,NO
+5-formamidoimidazole-4-carboxamide ribotide,purine metabolism,NO
+acetyl-CoA,TCA cycle,NO
+acetylcholine,unknown,NO
+aconitate,TCA cycle,YES
+adenine,purine metabolism,Yes
+adenosine,purine metabolism,YES
+adenylosuccinate,purine metabolism,NO
+ADP,nucleotides,YES
+ADP-glucose,nucleotides,NO
+ADP-ribose,nucleotides,NO
+AICAR,purine metabolism,NO
+alanine,amino acid and conjugate,YES
+allantoin,unknown,NO
+alpha-ketoglutarate,TCA cycle,YES
+aminoadipate,amino acid and conjugate,NO
+AMP,nucleotides,NO
+anserine,amino acid and conjugate,NO
+arginine,amino acid and conjugate,YES
+argininosuccinate,amino acid and conjugate,NO
+asparagine,amino acid and conjugate,YES
+aspartate,amino acid and conjugate,YES
+ATP,nucleotides,YES
+beta-alanine,amino acid and conjugate,NO
+betaine,unknown,NO
+biotin,unknown,NO
+carbamoylphosphate,pyrimidine metabolism,NO
+carnitine C10,medium chain carnitine,YES
+carnitine C12,medium chain carnitine,YES
+carnitine C14,long chain acylcarnitine,YES
+carnitine C16,long chain acylcarnitine,YES
+carnitine C18,long chain acylcarnitine,YES
+carnitine C2,short chain acylcarnitine,YES
+carnitine C3,short chain acylcarnitine,YES
+carnitine C4,short chain acylcarnitine,YES
+carnitine C4-DC,short chain acylcarnitine,YES
+carnitine C5,short chain acylcarnitine,YES
+carnitine C5-DC,short chain acylcarnitine,YES
+carnitine C6,short chain acylcarnitine,YES
+carnitine C8,medium chain carnitine,YES
+carnosine,amino acid and conjugate,NO
+CDP-ethanolamine,nucleotides,NO
+chenodeoxycholate,unknown,NO
+cholate,unknown,NO
+choline,unknown,NO
+citicoline,nucleotides,NO
+citrate/isocitrate,TCA cycle,YES
+citrulline,amino acid and conjugate,YES
+CMP,nucleotides,NO
+CMP-N-acetylneuraminate,nucleotides,NO
+creatine,unknown,NO
+creatinine,unknown,NO
+cyclic ADP-ribose,nucleotides,NO
+cyclic AMP,nucleotides,NO
+cyclic CMP,nucleotides,NO
+cystathionine,unknown,NO
+cysteate,unknown,NO
+cytidine,pyrimidine metabolism,NO
+cytosine,pyrimidine metabolism,NO
+deoxyadenosine,purine metabolism,NO
+deoxycholate,unknown,NO
+deoxycytidine,pyrimidine metabolism,NO
+deoxyuridine,pyrimidine metabolism,NO
+dihydrobiopterin,unknown,NO
+dihydroorotate,pyrimidine metabolism,YES
+dihydrouracil,pyrimidine metabolism,NO
+dihydroxyacetone phosphate,glycolysis and PPP,YES
+dimethylarginine,amino acid and conjugate,NO
+dTMP,nucleotides,NO
+FAD,unknown,NO
+fumarate,TCA cycle,YES
+gamma-glutamylcysteine,amino acid and conjugate,NO
+GDP,nucleotides,NO
+GDP-hexose,nucleotides,NO
+glutamate,amino acid and conjugate,YES
+glutamine,amino acid and conjugate,YES
+glutathione reduced,redox homeostasis,NO
+glyceraldehyde 3-phosphate,glycolysis and PPP,YES
+glycerate,unknown,NO
+glycerol,unknown,NO
+glycerol 3-phosphate,glycolysis and PPP,YES
+glycerylphosphorylcholine,unknown,NO
+glycine,amino acid and conjugate,YES
+glycocholate,unknown,NO
+glycylglycine,amino acid and conjugate,NO
+GMP,nucleotides,NO
+guanidinoacetate,amino acid and conjugate,NO
+guanine,purine metabolism,YES
+guanosine,purine metabolism,NO
+hexosamine,unknown,NO
+hexosamine phosphates,unknown,NO
+hexose phosphate,glycolysis and PPP,YES
+hippurate,unknown,NO
+histidine,amino acid and conjugate,YES
+homoarginine,unknown,NO
+homocitrulline,unknown,NO
+hypotaurine,unknown,NO
+hypoxanthine,purine metabolism,YES
+IMP,nucleotides,NO
+Indole-3-lactate,unknown,NO
+indoxyl sulfate,unknown,NO
+inosine,purine metabolism,NO
+isoleucine,amino acid and conjugate,YES
+kynurenine,amino acid and conjugate,NO
+lactate,glycolysis and PPP,YES
+leucine,amino acid and conjugate,YES
+lysine,amino acid and conjugate,YES
+malate,TCA cycle,YES
+malonate,unknown,NO
+methionine,amino acid and conjugate,YES
+methionine sulfoxide,amino acid and conjugate,NO
+mevalonate,unknown,NO
+mevalonate 5-pyrophosphate,unknown,NO
+myoinositol,unknown,NO
+N-acetylasparagine,amino acid and conjugate,NO
+N-acetylaspartate,amino acid and conjugate,NO
+N-acetylaspartylglutamate,amino acid and conjugate,NO
+N-acetylcysteine,amino acid and conjugate,NO
+N-acetylglutamate,amino acid and conjugate,NO
+N-acetylglutamine,amino acid and conjugate,NO
+N-acetylhexosamine,unknown,NO
+N-acetylhexosamine phosphates,unknown,NO
+N-acetylhistidine,amino acid and conjugate,NO
+N-acetylmethionine,amino acid and conjugate,NO
+N-acetylneuraminate,unknown,NO
+N-acetylputrescine,unknown,NO
+N-acetylserine,amino acid and conjugate,NO
+N-alpha-acetyllysine,amino acid and conjugate,NO
+N-carbamoylaspartate,pyrimidine metabolism,YES
+N-formylmethionine,amino acid and conjugate,NO
+"N6,N6,N6-trimethyllysine",amino acid and conjugate,NO
+NAD,redox homeostasis,YES
+NADH,redox homeostasis,YES
+nicotinamide,unknown,NO
+nicotinamide hypoxanthine dinucleotide,nucleotides,NO
+O-succinylhomoserine,unknown,NO
+oleoyl glycerol,unknown,NO
+ophthalmate,redox homeostasis,NO
+ornithine,amino acid and conjugate,YES
+orotate,pyrimidine metabolism,YES
+orotidine,pyrimidine metabolism,YES
+oxidized glutathione,redox homeostasis,NO
+palmitoylethanolamide,unknown,NO
+pantothenate,unknown,NO
+pentose bisphosphate,purine metabolism,NO
+pentose phosphate,glycolysis and PPP,YES
+phenylalanine,amino acid and conjugate,YES
+phosphocreatine,unknown,NO
+phosphoenolpyruvate,glycolysis and PPP,YES
+phosphoethanolamine,unknown,NO
+phosphonoacetate,unknown,NO
+phosphorylcholine,unknown,NO
+pipecolate,unknown,NO
+proline,amino acid and conjugate,YES
+pyridoxine,unknown,NO
+pyroglutamate,amino acid and conjugate,NO
+pyruvate,glycolysis and PPP,NO
+raffinose,unknown,NO
+ribitol,unknown,NO
+riboflavin,unknown,NO
+S-(2-succinyl)cysteine,redox homeostasis,NO
+S-adenosylhomocysteine,amino acid and conjugate,NO
+S-adenosylmethionine,amino acid and conjugate,NO
+S-lactoylglutathione,glycolysis and PPP,NO
+S-methylcysteine,amino acid and conjugate,NO
+sarcosine,amino acid and conjugate,NO
+sedoheptulose 7-phosphate,glycolysis and PPP,YES
+serine,amino acid and conjugate,YES
+stachyose,unknown,NO
+succinate,TCA cycle,YES
+succinyladenosine,purine metabolism,NO
+succinylglutathione,redox homeostasis,NO
+targinine,amino acid and conjugate,NO
+taurine,unknown,NO
+thiamine,unknown,NO
+thiamine monophosphate,unknown,NO
+thiamine pyrophosphate,unknown,NO
+threonine,amino acid and conjugate,YES
+trans-cinnamate,unknown,NO
+trigonelline,unknown,NO
+trimethylamine N-oxide,unknown,NO
+tryptophan,amino acid and conjugate,YES
+tyrosine,amino acid and conjugate,YES
+UDP,nucleotides,NO
+UDP-GlcNac,nucleotides,NO
+UDP-glucose,nucleotides,NO
+UDP-glucuronate,nucleotides,NO
+UMP,nucleotides,NO
+uracil,pyrimidine metabolism,NO
+urate,purine metabolism,NO
+ureidopropionate,unknown,NO
+uridine,pyrimidine metabolism,NO
+valine,amino acid and conjugate,NO
+xanthine,purine metabolism,NO
+xanthosine,purine metabolism,NO
+xanthosine monophosphate,nucleotides,NO
