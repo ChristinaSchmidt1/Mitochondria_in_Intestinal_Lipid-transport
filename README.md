@@ -45,20 +45,19 @@ GSEA and ORA were performed and results will be available upon publication in th
 The Metabolomics data of the IECs will be deposited with the manuscript (under revision). LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Metabolomics"***:
 
 - `IECs_RawData.csv` (Metabolomics results)
-- `Tissue_RawData.csv` (Metabolomics results)
 - `Template_MetabolicPathways.csv` (Metabolite names and associated pathways)
 
 After performing data filtering and normalisation (80%-filtering rule, missing value imputation, total/ion count normalisation) and outlier detection based on quality control (muma analysis, for details see html and folder "Muma"), the results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
 
-- `Sheet2_MVI-TIC-normalised_OutliersMarked.csv`
+- `Sheet2_IECs_MVI-TIC-normalised_OutliersMarked.csv`
 
-Using the normalised data Sheet2_MVI-TIC-normalised_OutliersMarked.csv, we removed the outliers and calculated the mean of the analytical replicates. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+Using the normalised data Sheet2_IECs_MVI-TIC-normalised_OutliersMarked.csv, we removed the outliers and calculated the mean of the analytical replicates. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
 
-- `Sheet3_MVI-TIC-normalised_Means.csv`
+- `Sheet3_IECs_MVI-TIC-normalised_Means.csv`
 
 Differential metabolite analysis comparing KO versus WT. Here we performed the t-Test and p-value adjustment using Benjamini Hochberg. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
 
-- `Sheet4_DMA_TGvWT.csv`
+- `Sheet4_DMA_TGvWT_IECs_Pathways.csv`
 
 ## Figures
 Generated figures can be found in the ***html files*** or in the folder ***"Figures"***.
