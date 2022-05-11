@@ -320,15 +320,8 @@ Mouse <- sb$run_query(NULL, c('ensembl_gene_id', 'external_gene_name', 'entrezge
 #The column "external_gene_id" and "entrezgene_id" are a list, so we have to unlist
 Mouse <- Mouse %>%
   unnest(c(external_gene_name, entrezgene_id))
-```
 
-```{r, message=FALSE, warning=FALSE}
-library(org.Mm.eg.db)#For mouse load:
-library(clusterProfiler)#To run ORA
-library(enrichplot)#For emapplot, dotplot,...
-library(ggplot2)#For safing and legends
-
-#Prepare the Universe and Gene set to test:
+#Translate the DF:
 print("Number of genes in the TGvWT dataset:")
 print(nrow(TGvWT_ND))
 
@@ -339,6 +332,15 @@ df <- df%>%
 print("Number of genes with entrezgene_id in the TGvWT dataset:")
 print(nrow(df))
 
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(org.Mm.eg.db)#For mouse load:
+library(clusterProfiler)#To run ORA
+library(enrichplot)#For emapplot, dotplot,...
+library(ggplot2)#For safing and legends
+
+#Prepare the Universe and Gene set to test:
 allGenes <- as.character(df$entrezgene_id)
 
 clusterGenes_Pos <- subset(df, padj < 0.05 & log2FoldChange > 0.5, select="entrezgene_id")
@@ -420,8 +422,9 @@ First we downloaded the signatures of interest from the [MsigDB](http://software
 2. "GO_BP", "GO_CC", "GO_MF"\
 \
 Since all these signatures are based on human genes, we translated them into mouse gene names. Of course some human genes are not conserved in mouse (and the other way around) and hence the signatures may become smaller.\
-This was done using [scibiomart](https://github.com/ArianeMora/scibiomart/tree/1.0.0), which is based on [biomaRt](https://www.bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/biomaRt.html).
-
+This was done using [scibiomart](https://github.com/ArianeMora/scibiomart/tree/1.0.0), which is based on [biomaRt](https://www.bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/biomaRt.html).\
+\
+Lastly, it is worth mentioning that there are ties in the preranked stats (2.63% of the list). The order of those tied genes will be arbitrary, and hence we will get slightly different results in every rerun. 
 ```{r, message=FALSE, warning=FALSE}
 #Install and download the package
 library(reticulate)
@@ -533,7 +536,7 @@ ATF4_Han <- Pathway_M
 ```
 
 1. "KEGG", "Reactome", "Biocarta", "Hallmarks", "ATF4":\
-```{r, warning= FALSE, message=FALSE}
+```{r, warning= FALSE, message=FALSE, eval=FALSE}
 #Load DF with EnterezIDs
 GSEA_ND <- df
 
@@ -555,6 +558,16 @@ DoGSEA_1 <- function(InputData, OutputfileName){
   gsea_result1 <- fgsea(pathways = pathway_list, stats = t_val, nperm = 1000)
   write_csv(gsea_result1[,c(-8)], file=paste("OutputData/Proteomics/GSEA_result_KEGG-Hallmark-Reactome-Biocarta-ATF4", OutputfileName, ".csv", sep="_"))
   Output1 <- gsea_result1
+}
+
+#Run the functions
+DoGSEA_1(InputData = GSEA_ND, 
+                  OutputfileName="TGvWT")
+```
+```{r, warning= FALSE, message=FALSE}
+#Establish function
+DoVolcano_1 <- function(InputData, OutputfileName){
+  gsea_result1 <- InputData
   ##Plot
   Volcano1 <- separate(gsea_result1,"pathway", into = c("signature", "rest"), sep= "_", remove=FALSE)%>% 
     mutate(colour = case_when(signature =="KEGG" ~ 'blue',
@@ -617,7 +630,7 @@ DoGSEA_1 <- function(InputData, OutputfileName){
                 y = "padj",#p-value or q-value
                 xlab = "NES",
                 ylab = bquote(~-Log[10]~p.adj),#(~-Log[10]~adjusted~italic(P))
-                selectLab = c("KEGG_OXIDATIVE_PHOSPHORYLATION","HALLMARK_OXIDATIVE_PHOSPHORYLATION","REACTOME_RESPIRATORY_ELECTRON_TRANSPORT","REACTOME_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT", "HALLMARK_UNFOLDED_PROTEIN_RESPONSE", "REACTOME_MITOCHONDRIAL_PROTEIN_IMPORT", "ATF4_Han", "BIOCARTA_EIF_PATHWAY", "BIOCARTA_EIF2_PATHWAY", "HALLMARK_FATTY_ACID_METABOLISM", "REACTOME_SYNTHESIS_OF_VERY_LONG_CHAIN_FATTY_ACYL_COAS", "HALLMARK_ADIPOGENESIS"),
+                selectLab = c("KEGG_OXIDATIVE_PHOSPHORYLATION","HALLMARK_OXIDATIVE_PHOSPHORYLATION","REACTOME_RESPIRATORY_ELECTRON_TRANSPORT","REACTOME_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT", "HALLMARK_UNFOLDED_PROTEIN_RESPONSE", "REACTOME_MITOCHONDRIAL_PROTEIN_IMPORT", "ATF4_Han", "BIOCARTA_EIF_PATHWAY", "BIOCARTA_EIF2_PATHWAY", "HALLMARK_FATTY_ACID_METABOLISM", "REACTOME_SYNTHESIS_OF_VERY_LONG_CHAIN_FATTY_ACYL_COAS", "HALLMARK_ADIPOGENESIS", "REACTOME_ION_TRANSPORT_BY_P_TYPE_ATPASES", "HALLMARK_MTORC1_SIGNALING"),
                 pCutoff = 0.25,
                 FCcutoff = 0.5,#Cut off Log2FC, automatically 2
                 pointSize = 3,
@@ -647,12 +660,15 @@ DoGSEA_1 <- function(InputData, OutputfileName){
   plot(VolcanoPlot1)
 }
 
-DoGSEA_1(InputData = GSEA_ND, 
-      OutputfileName="TGvWT")
+#Run the functions
+GSEA1 <- read.csv("OutputData/Proteomics/GSEA_result_KEGG-Hallmark-Reactome-Biocarta-ATF4_TGvWT_.csv")
+  
+DoVolcano_1(InputData = GSEA1, 
+                  OutputfileName="TGvWT")
 ```
 \
 2. GO-terms:\
-```{r, warning= FALSE, message=FALSE}
+```{r, warning= FALSE, message=FALSE, eval=FALSE}
 DoGSEA_2 <- function(InputData, OutputfileName){
   #Prepare data matrix for GSEA:
   Column_Gene <- as.character(InputData$ensembl)#Ensembl name
@@ -670,8 +686,18 @@ DoGSEA_2 <- function(InputData, OutputfileName){
   gsea_result2 <- fgsea(pathways = pathway_list, stats = t_val, nperm = 1000)
   write_csv(gsea_result2[,c(-8)], file=paste("OutputData/Proteomics/GSEA_result_GO-terms", OutputfileName, ".csv", sep="_"))
   Output <- gsea_result2
+}
+
+#Run the functions
+DoGSEA_2(InputData = GSEA_ND, 
+         OutputfileName="TGvWT")
+
+```
+```{r, warning= FALSE, message=FALSE}
+DoVolcano_2 <- function(InputData, OutputfileName){
+  gsea_result2 <- InputData
   #Plot
-  Volcano2 <- separate(gsea_result2,"pathway", into = c("rest","signature"), sep= "_", remove=FALSE)%>% 
+  Volcano2 <- separate(gsea_result2,"pathway", into = c("GO","signature","rest"), sep= "_", remove=FALSE)%>% 
     mutate(colour = case_when(signature =="BP" ~ 'blue',
                               signature =="CC" ~ 'gold4',
                               signature =="MF" ~ 'deeppink4',
@@ -721,10 +747,11 @@ DoGSEA_2 <- function(InputData, OutputfileName){
    plot(VolcanoPlot)
 }
 
+#Run the functions
+GSEA2 <- read.csv("OutputData/Proteomics/GSEA_result_GO-terms_TGvWT_.csv")
 
-DoGSEA_2(InputData = GSEA_ND, 
-      OutputfileName="TGvWT")
-
+DoVolcano_2(InputData = GSEA2, 
+                  OutputfileName="TGvWT")
 ```
 
 3. Specific Volcano Plots of ATF4 signature:\
@@ -780,8 +807,8 @@ Signature_Merge_Prot <- merge(x=Signature,y=df_Blot_Prot, by.x="gene", by.y="ens
 VolcanoPlot_Proteomics(Signature_Merge_Prot=Signature_Merge_Prot, 
                    Signature=Signature, 
                    OutputPlotName="ATF4", 
-                   NES="2.36", 
-                   p.adj="0.05")#y=6.5
+                   NES="2.32", 
+                   p.adj="0.04")#y=6.5
 
 ```
 
