@@ -489,7 +489,7 @@ write.csv(DMA_TGvWT_IEC[,-6], "OutputData/Metabolomics/Sheet4_DMA_TGvWT_IECs_Pat
 VolcanoPlot(DMA_TGvWT_IEC, "IECs_TGvWT")
 ```
 
-```{r, warning= FALSE, message=FALSE, echo=FALSE}
+```{r, warning= FALSE, message=FALSE}
 DMA_PathwaysPlot_IEC <- DMA_TGvWT_IEC
 
 #Make a list of metabolites that we want to see on the plot:
