@@ -506,8 +506,9 @@ Labels <-Labels[,1]
     ifelse(DMA_PathwaysPlot_IEC$Pathway == "pyrimidine metabolism", "darkorchid4",
     ifelse(DMA_PathwaysPlot_IEC$Pathway == "redox homeostasis", "orange",
     ifelse(DMA_PathwaysPlot_IEC$Pathway == "short chain acylcarnitine", "gold1",
+    ifelse(DMA_PathwaysPlot_IEC$Pathway == "medium chain carnitine", "gold3",       
     ifelse(DMA_PathwaysPlot_IEC$Pathway == "TCA cycle", "firebrick4",
-          "gray")))))))))
+          "gray"))))))))))
   keyvals[is.na(keyvals)] <- 'gray'
   names(keyvals)[keyvals == 'gray'] <- 'Other'
   names(keyvals)[keyvals == 'blue'] <- "Amino acid and Conjugates"
@@ -519,6 +520,7 @@ Labels <-Labels[,1]
   names(keyvals)[keyvals == 'orange'] <- "Redox homeostasis"
   names(keyvals)[keyvals == 'gold1'] <- "Short chain Acylcarnitines"
   names(keyvals)[keyvals == 'firebrick4'] <- "TCA cycle"
+  names(keyvals)[keyvals == 'gold3'] <- "Medium chain Carnitines"
 
 #Plot
 VolcanoPlot4<- EnhancedVolcano (DMA_PathwaysPlot_IEC,
