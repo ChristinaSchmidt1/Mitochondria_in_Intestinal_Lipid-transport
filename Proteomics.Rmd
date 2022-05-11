@@ -117,7 +117,7 @@ VolcanoPlot4<- EnhancedVolcano (TGvWT_ND,
                 titleLabSize = 16,
                 col=c("darkseagreen3", "mediumaquamarine", "mediumaquamarine", "cyan4"),
                 colAlpha = 0.5,
-                title="D7_TGvWT_ND",
+                title="TGvWT",
                 subtitle = bquote(italic("Proteomics")),
                 caption = paste0("total = ", nrow(TGvWT_ND), " Genes"),
                 #xlim = c(-3.5,2.5),
@@ -152,7 +152,7 @@ VolcanoPlot3<- EnhancedVolcano (TGvWT_ND,
                 titleLabSize = 16,
                 col=c("darkseagreen3", "mediumaquamarine", "mediumaquamarine", "cyan4"),
                 colAlpha = 0.5,
-                title="D7_TGvWT_ND",
+                title="TGvWT",
                 subtitle = bquote(italic("Proteomics")),
                 caption = paste0("total = ", nrow(TGvWT_ND), " Genes"),
                 #xlim = c(-3.5,2.5),
@@ -287,6 +287,42 @@ VolcanoPlot1<- EnhancedVolcano (Complexes_Prot,
                 )
 ggsave("Figures/Proteomics/VolcanoPlot_mt-Complexes_TGvWT_LabelSelect.pdf", plot=VolcanoPlot1, width=10, height=8)
 plot(VolcanoPlot1)
+
+
+VolcanoPlot2<- EnhancedVolcano (Complexes_Prot,
+                lab = Complexes_Prot$Symbol,#Metabolite name
+                x = "log2FoldChange",#Log2FC
+                y = "pval",#p-value or q-value
+                xlab = bquote(~Log[2]~ "FC"),
+                ylab = bquote(~-Log[10]~p.val),#(~-Log[10]~adjusted~italic(P))
+                pCutoff = 0.05,
+                FCcutoff = 0.5,#Cut off Log2FC, automatically 2
+                pointSize = 4,
+                labSize = 2,
+                titleLabSize = 16,
+                shapeCustom = keyvals.shape,
+                colCustom = keyvals,
+                colAlpha = 0.5,
+                title="D8_TGvWT",
+                subtitle = bquote(italic("Genes of the mitochondrial Complexes")),
+                caption = paste0("total = ", nrow(Complexes_Prot), " genes of the mitochondrial Complexes"),
+                xlim = c(-8,4),
+                ylim = c(0,15),
+                #drawConnectors = TRUE,
+                #widthConnectors = 0.5,
+                #colConnectors = "black",
+                #arrowheads=FALSE,
+                cutoffLineType = "dashed",
+                cutoffLineCol = "black",
+                cutoffLineWidth = 0.5,
+                #legendLabels=c('No changes',"-0.5< Log2FC <0.5","-0.5< Log2FC <0.5", 'p.adj<0.05 & -0.5< Log2FC <0.5"'),
+                legendPosition = 'right',
+                legendLabSize = 8,
+                legendIconSize =4
+                )
+ggsave("Figures/Proteomics/VolcanoPlot_mt-Complexes_TGvWT_p.val.pdf", plot=VolcanoPlot2, width=10, height=8)
+plot(VolcanoPlot2)
+
 ```
 
 # Gene set enrichment (GSE)
@@ -334,7 +370,7 @@ print(nrow(df))
 
 ```
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
 library(org.Mm.eg.db)#For mouse load:
 library(clusterProfiler)#To run ORA
 library(enrichplot)#For emapplot, dotplot,...
@@ -380,11 +416,9 @@ write_csv(clusterGoSummary_Neg, "OutputData/Proteomics/ORA_Log2FCsm-0.5_padj0.05
 x1 <- pairwise_termsim(clusterGo_Pos)
 Emapplot<- emapplot(x1, pie_scale=1,showCategory=50, layout = "nicely", cex_label_category=0.4, min_edge=0.2)+ ggtitle("TGvWT: Log2FC>0.5 & p.adj<0.05")
 ggsave("Figures/Proteomics/Emapplot_Log2FCbg0.5_padj0.05_TGvWT_Top50.pdf", plot=Emapplot, width=10, height=8)
-plot(Emapplot)
 
 Emapplot1<- emapplot(x1, pie_scale=1,showCategory=40, layout = "nicely", cex_label_category=0.4, min_edge=0.2)+ ggtitle("TGvWT: Log2FC>0.5 & p.adj<0.05")
-ggsave("Figures/Proteomics/Emapplot_Log2FCbg0.5_padj0.05_D7-TGvWT_Top40.pdf", plot=Emapplot1, width=10, height=8)
-plot(Emapplot1)
+ggsave("Figures/Proteomics/Emapplot_Log2FCbg0.5_padj0.05_TGvWT_Top40.pdf", plot=Emapplot1, width=10, height=8)
 
 Dotplot <- dotplot(clusterGo_Pos, showCategory=50) + ggtitle("TGvWT: Log2FC>0.5 & p.adj<0.05")+ theme(axis.text.x =element_text(size=8,face="bold"), axis.text.y =element_text(size=8,face="bold"), axis.title=element_text(size=5))
 ggsave("Figures/Proteomics/Dotplot_Log2FCbg0.5_padj0.05_TGvWT.pdf", plot=Dotplot, width=10, height=8)
@@ -393,27 +427,24 @@ plot(Dotplot)#https://github.com/YuLab-SMU/enrichplot/issues/22
 Heatplot <- heatplot(clusterGo_Pos,showCategory=50) + theme(axis.text.x =element_text(size=2),
         axis.text.y =element_text(size=5,face="bold"), axis.title=element_text(size=12,face="bold")) +ggtitle("TGvWT: Log2FC>0.5 & p.adj<0.05")
 ggsave("Figures/Proteomics/Heatplot_Log2FCbg0.5_padj0.05_TGvWT.pdf", plot=Heatplot, width=14, height=8)
-plot(Heatplot)
 
 ##NEGATIVE:
 x2 <- pairwise_termsim(clusterGo_Neg)
 Emapplot2<- emapplot(x2,pie_scale=1, showCategory=50, layout = "nicely", cex_label_category=0.4, min_edge=0.2)+ ggtitle("TGvWT: Log2FC<-0.5 & p.adj<0.05")
 ggsave("Figures/Proteomics/Emapplot_Log2FCsm-0.5_padj0.05_TGvWT_Top50.pdf", plot=Emapplot2, width=10, height=8)
-plot(Emapplot2)
 
 Emapplot3<- emapplot(x2,pie_scale=1, showCategory=40, layout = "nicely", cex_label_category=0.4, min_edge=0.2)+ ggtitle("TGvWT: Log2FC<-0.5 & p.adj<0.05")
 ggsave("Figures/Proteomics/Emapplot_Log2FCsm-0.5_padj0.05_TGvWT_Top40.pdf", plot=Emapplot3, width=10, height=8)
-plot(Emapplot3)
 
 Dotplot1 <- dotplot(clusterGo_Neg, showCategory=50) + ggtitle("TGvWT: Log2FC<-0.5 & p.adj<0.05")+ theme(axis.text.x =element_text(size=8,face="bold"), axis.text.y =element_text(size=8,face="bold"), axis.title=element_text(size=5))
 ggsave("Figures/Proteomics/Dotplot_Log2FCsm-0.5_padj0.05_TGvWT.pdf", plot=Dotplot1, width=10, height=8)
-plot(Dotplot1)
 
 Heatplot1 <- heatplot(clusterGo_Neg,showCategory=50) + theme(axis.text.x =element_text(size=2),
         axis.text.y =element_text(size=5,face="bold"), axis.title=element_text(size=12,face="bold")) +ggtitle("TGvWT: Log2FC<-0.5 & p.adj<0.05")
 ggsave("Figures/Proteomics/Heatplot_Log2FCsm-0.5_padj0.05_TGvWT.pdf", plot=Heatplot1, width=14, height=8)
-plot(Heatplot1)
 ```
+
+![](InputData/ORA_vs_GSEA.png)
 
 ## GSEA - MsigDB
 We run the GSEA analysis using the t-value of the DESeq2 results for ranking.\
@@ -754,6 +785,7 @@ DoVolcano_2(InputData = GSEA2,
                   OutputfileName="TGvWT")
 ```
 
+
 3. Specific Volcano Plots of ATF4 signature:\
 ```{r, message=FALSE, warning=FALSE}
 #Make the DF:
@@ -794,6 +826,39 @@ VolcanoPlot_Proteomics <- function(Signature_Merge_Prot, Signature, OutputPlotNa
                 )
   ggsave(file=paste("Figures/Proteomics/VolcanoPlot_Proteomics_TGvWT", OutputPlotName, ".pdf", sep="_"), plot=VolcanoPlot, width=10, height=8)
    plot(VolcanoPlot)
+   
+  VolcanoPlot1 <-EnhancedVolcano (Signature_Merge_Prot,
+                lab = Signature_Merge_Prot$Gene,#Metabolite name
+                x = "log2FoldChange",#Log2FC
+                y = "pval",#p-value or q-value
+                xlab = bquote(~Log[2]~ "FC"),
+                ylab = bquote(~-Log[10]~p.val),#(~-Log[10]~adjusted~italic(P))
+                pCutoff = 0.05,
+                FCcutoff = 0.5,#Cut off Log2FC, automatically 2
+                pointSize = 4,
+                labSize = 2,
+                titleLabSize = 12,
+                subtitleLabSize = 8,
+                col=c("darkseagreen3", "mediumaquamarine", "mediumaquamarine", "cyan4"),
+                colAlpha = 0.5,
+                title="Proteomics: D7_TGvWT",
+                subtitle = (file=paste("", OutputPlotName, " (NES=", NES, "p.val=", p.adj, ")",sep="")),
+                caption = paste0("total = ", nrow(Signature_Merge_Prot), " genes of ", nrow(Signature), " genes in pathway"),
+                #xlim = c(-3.5,2.5),
+                ylim = c(0,15),
+                #drawConnectors = TRUE,
+                #widthConnectors = 0.5,
+                #colConnectors = "black",
+                cutoffLineType = "dashed",
+                cutoffLineCol = "black",
+                cutoffLineWidth = 0.5,
+                #legendLabels=c('No changes',"-0.5< Log2FC <0.5","-0.5< Log2FC <0.5", 'p.adj<0.05 & -0.5< Log2FC <0.5"'),
+                legendPosition = 'right',
+                legendLabSize = -1,
+                legendIconSize = -1
+                )
+  ggsave(file=paste("Figures/Proteomics/VolcanoPlot_Proteomics_TGvWT_p.val", OutputPlotName, ".pdf", sep="_"), plot=VolcanoPlot1, width=10, height=8)
+   plot(VolcanoPlot1)
 }
 
 ```
