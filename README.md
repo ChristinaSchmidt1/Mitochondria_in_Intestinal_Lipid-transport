@@ -16,17 +16,23 @@ List of mouse mitochondria electron transport chain complexes where extracted fr
 
 ## Data
 ### RNAseq
-The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping and counting) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\RNAseq"***:
+The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping, counting and DESeq2) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\RNAseq"***:
 
-- `.csv` Raw count matrix (Provided by Ulrike Göbel)
+- `RawCounts.csv` Raw count matrix (Provided by Ulrike Göbel)
+- `SP_3Days_differential_expression_DESeq2_tg_VS_wt_Read2_plus_A18.csv` DESeq results comparing TG versus WT on Day 3 (Provided by Ulrike Göbel)
+- `SP_7Days_differential_expression_DESeq2_tg_VS_wt_Read2_plus_A18.csv` DESeq results comparing TG versus WT on Day 7 (Provided by Ulrike Göbel)
 
-First, Differential Expression Analysis using DESeq2 was performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
+Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
 
-- `.csv`
+- `GSEA_result_GO-terms_Day3-TGvWT_.csv`
+- `GSEA_result_GO-terms_Day7-TGvWT_.csv`
+- `GSEA_result_KEGG-Hallmark-Reactome-Biocarta-ATF4_Day3-TGvWT_.csv`
+- `GSEA_result_KEGG-Hallmark-Reactome-Biocarta-ATF4_Day7-TGvWT_.csv`
 
-Next, Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
-
-- `.csv`
+- `ORA_Log2FCbg1_padj0.05_3Days-TGvWT.csv`
+- `ORA_Log2FCsm-1_padj0.05_3Days-TGvWT.csv`
+- `ORA_Log2FCbg1_padj0.05_7Days-TGvWT.csv`
+- `ORA_Log2FCsm-1_padj0.05_7Days-TGvWT.csv`
 
 ### Proteomics
 The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Proteomics"***:
