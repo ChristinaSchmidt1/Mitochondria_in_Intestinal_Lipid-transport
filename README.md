@@ -35,7 +35,7 @@ Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were 
 - `ORA_Log2FCsm-1_padj0.05_7Days-TGvWT.csv`
 
 ### Proteomics
-The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Proteomics"***:
+The Proteomics data of the IECs have been deposited to the ProteomeXchange Consortium via the PRIDE43 partner repository with the dataset identifier PXD026934. MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Proteomics"***:
 
 - `20210328_proteinGroups_TB.csv` (LFQ values and the results of  the differential expression analysis was provided by Theresa Bock, Krüger Lab)
 - `Petros et al_Mouse-ETC-Complexes.csv` (Mitochondria electron transport chain complexes from [Petros et al.](https://www.cell.com/cell-reports/comments/S2211-1247(17)31412-2))
@@ -48,7 +48,7 @@ GSEA and ORA were performed and results are available in the folder ***"OutputDa
 - `GSEA_result_GO-terms_TGvWT_.csv`
 
 ### Metabolomics
-The Metabolomics data of the IECs will be deposited with the manuscript (under revision). LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Metabolomics"***:
+The Metabolomics data of the IECs haven been deposited at Metabolomics Workbench under the study_id ST002184. LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Metabolomics"***:
 
 - `IECs_RawData.csv` (Metabolomics results)
 - `Template_MetabolicPathways.csv` (Metabolite names and associated pathways)
