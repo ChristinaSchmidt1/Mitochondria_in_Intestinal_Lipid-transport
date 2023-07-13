@@ -1,5 +1,7 @@
-# **Mitochondria regulate dietary lipid processing in enterocytes**
-*Chrysanthi Moschandrea[^1][^2] , Vangelis Kondylis[^1][^2][^3], Marija Herholz[^2][^4], Karolina Szczepanowska[^2][^4], Robin Schwarzer[^1][^2], Ioannis Evangelakos[^5], Markus Heine[^5], Michelle Y. Jaeckstein[^5], Christina Schmidt[^6], Ming Yang[^6], Efterpi Nikitopoulou[^6], Theresa Bock[^1][^2], Marcus Krüger[^1][^2], Susanne Brodesser[^2], Christian Frezza[^6], Joerg Heeren[^5], Aleksandra Trifunovic[^2][^3][^4], Manolis Pasparakis[^1][^2][^3]*
+# **Mitochondrial dysfunction abrogates dietary lipid processing in enterocytes**
+*Chrysanthi Moschandrea[^1][^2], Vangelis Kondylis[^3][^4], Ioannis Evangelakos[^5], Marija Herholz[^2][^6], Farina Schneider[^2][^7] , Christina Schmidt[^2][^7][^8], Ming Yang[^2][^7][^8], Sandra Ehret[^5], Markus Heine[^5], Michelle Y. Jaeckstein[^5], Karolina Szczepanowska[^2][^6], Robin Schwarzer[^1][^2],  Linda Baumann[^2][^6], Theresa Bock[^1][^2], Efterpi Nikitopoulou[^8],Susanne Brodesser[^2], Marcus Krüger[^1][^2],  Christian Frezza[^2][^7][^8], Joerg Heeren[^5], Aleksandra Trifunovic[^2][^3][^6], Manolis Pasparakis[^1][^2][^4]*\
+
+Correspondence: Aleksandra Trifunovic: atrifuno@uni-koeln.de & Manolis Pasparakis: pasparakis@uni-koeln.de
 
 ##
 **The notebook contains:** 
@@ -16,7 +18,7 @@ List of mouse mitochondria electron transport chain complexes where extracted fr
 
 ## Data
 ### RNAseq
-The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping, counting and DESeq2) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data are available in the folder ***"InputData\RNAseq"***:
+The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice have been deposited in NCBI’s Gene Expression Omnibus and are accessible through GEO Series accession number GSE207803. RNAseq data analysis (Read trimming, mapping, counting and DESeq2) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data are available in the folder ***"InputData\RNAseq"***:
 
 - `RawCounts.csv` Raw count matrix (Provided by Ulrike Göbel)
 - `SP_3Days_differential_expression_DESeq2_tg_VS_wt_Read2_plus_A18.csv` DESeq results comparing TG versus WT on Day 3 (Provided by Ulrike Göbel)
@@ -70,7 +72,9 @@ Generated figures can be found in the ***html files*** or in the folder ***"Figu
 
 [^1]: Institute for Genetics, University of Cologne, Cologne, Germany.
 [^2]: Cologne Excellence Cluster on Cellular Stress Responses in Aging-Associated Diseases (CECAD), University of Cologne, Cologne, Germany.
-[^3]: Center for Molecular Medicine (CMMC), University of Cologne, Cologne, Germany.
-[^4]: Institute for Mitochondrial Diseases and Aging, Medical Faculty, University of Cologne, Cologne, Germany
+[^3]: Institute for Pathology, Medical Faculty and University Hospital of Cologne, University of Cologne, Germany.
+[^4]: Center for Molecular Medicine (CMMC), University of Cologne, Cologne, Germany.
 [^5]: Department of Biochemistry and Molecular Cell Biology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany
-[^6]: MRC Cancer Unit, University of Cambridge, Hutchison/MRC Research Centre, Box 197, Cambridge Biomedical Campus, Cambridge CB2 0XZ, UK
+[^6]: Institute for Mitochondrial Diseases and Aging, Medical Faculty, University of Cologne, Cologne, Germany
+[^7]: Medical Faculty and University Hospital of Cologne, University of Cologne, Germany.
+[^8]: MRC Cancer Unit, University of Cambridge, Hutchison/MRC Research Centre, Box 197, Cambridge Biomedical Campus, Cambridge CB2 0XZ, UK
