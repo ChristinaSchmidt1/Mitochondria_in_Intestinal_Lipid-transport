@@ -16,13 +16,13 @@ List of mouse mitochondria electron transport chain complexes where extracted fr
 
 ## Data
 ### RNAseq
-The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping, counting and DESeq2) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\RNAseq"***:
+The RNAseq data of the total small intestinal proximal tissue from DARS2tamIEC-KO mice will be deposited with the manuscript (under revision). RNAseq data analysis (Read trimming, mapping, counting and DESeq2) was performed by Ulrike Göbel , CECAD Research Center, Cologne, Germany. Input data are available in the folder ***"InputData\RNAseq"***:
 
 - `RawCounts.csv` Raw count matrix (Provided by Ulrike Göbel)
 - `SP_3Days_differential_expression_DESeq2_tg_VS_wt_Read2_plus_A18.csv` DESeq results comparing TG versus WT on Day 3 (Provided by Ulrike Göbel)
 - `SP_7Days_differential_expression_DESeq2_tg_VS_wt_Read2_plus_A18.csv` DESeq results comparing TG versus WT on Day 7 (Provided by Ulrike Göbel)
 
-Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results will be available upon publication in the folder ***"OutputData\RNAseq"***:
+Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were performed and results are available in the folder ***"OutputData\RNAseq"***:
 
 - `GSEA_result_GO-terms_Day3-TGvWT_.csv`
 - `GSEA_result_GO-terms_Day7-TGvWT_.csv`
@@ -35,12 +35,12 @@ Gene Set Enrichment Analysis (GSEA) and Over Representation Analysis (ORA) were 
 - `ORA_Log2FCsm-1_padj0.05_7Days-TGvWT.csv`
 
 ### Proteomics
-The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Proteomics"***:
+The Proteomics data of the IECs will be deposited with the manuscript (under revision). MS-based proteome data acquisition and analysis has been performed by the Krüger Lab, CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Proteomics"***:
 
 - `20210328_proteinGroups_TB.csv` (LFQ values and the results of  the differential expression analysis was provided by Theresa Bock, Krüger Lab)
 - `Petros et al_Mouse-ETC-Complexes.csv` (Mitochondria electron transport chain complexes from [Petros et al.](https://www.cell.com/cell-reports/comments/S2211-1247(17)31412-2))
 
-GSEA and ORA were performed and results will be available upon publication in the folder ***"OutputData\Proteomics"***:
+GSEA and ORA were performed and results are available in the folder ***"OutputData\Proteomics"***:
 
 - `ORA_Log2FCbg0.5_padj0.05_TGvWT.csv`
 - `ORA_Log2FCsm-0.5_padj0.05_TGvWT.csv`
@@ -48,20 +48,20 @@ GSEA and ORA were performed and results will be available upon publication in th
 - `GSEA_result_GO-terms_TGvWT_.csv`
 
 ### Metabolomics
-The Metabolomics data of the IECs will be deposited with the manuscript (under revision). LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data will be available upon publication in the folder ***"InputData\Metabolomics"***:
+The Metabolomics data of the IECs will be deposited with the manuscript (under revision). LC-MS data aquistion has been performed by Ming Yang, [Frezza Laboratory](https://www.cecad.uni-koeln.de/research/principal-investigators/prof-dr-christian-frezza), CECAD Research Center, Faculty of Medicine, University Hospital Cologne, Germany. Input data are available in the folder ***"InputData\Metabolomics"***:
 
 - `IECs_RawData.csv` (Metabolomics results)
 - `Template_MetabolicPathways.csv` (Metabolite names and associated pathways)
 
-After performing data filtering and normalisation (80%-filtering rule, missing value imputation, total/ion count normalisation) and outlier detection based on quality control (muma analysis, for details see html and folder "Muma"), the results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+After performing data filtering and normalisation (80%-filtering rule, missing value imputation, total/ion count normalisation) and outlier detection based on quality control (muma analysis), the results are saved in the folder ***"OutputData\Metabolomics"***:
 
 - `Sheet2_IECs_MVI-TIC-normalised_OutliersMarked.csv`
 
-Using the normalised data Sheet2_IECs_MVI-TIC-normalised_OutliersMarked.csv, we removed the outliers and calculated the mean of the analytical replicates. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+Using the normalised data Sheet2_IECs_MVI-TIC-normalised_OutliersMarked.csv, we removed the outliers and calculated the mean of the analytical replicates. The results are saved in the folder ***"OutputData\Metabolomics"***:
 
 - `Sheet3_IECs_MVI-TIC-normalised_Means.csv`
 
-Differential metabolite analysis comparing KO versus WT. Here we performed the t-Test and p-value adjustment using Benjamini Hochberg. The results will be saved in the folder ***"OutputData\Metabolomics"*** upon publication:
+Differential metabolite analysis comparing KO versus WT. Here we performed the t-Test and p-value adjustment using Benjamini Hochberg. The results are saved in the folder ***"OutputData\Metabolomics"***:
 
 - `Sheet4_DMA_TGvWT_IECs_Pathways.csv`
 
