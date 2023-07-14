@@ -71,7 +71,7 @@ Differential metabolite analysis comparing KO versus WT. Here we performed the t
 Generated figures can be found in the ***html files*** or in the folder ***"Figures"***.
 
 ## System requirements
-Software dependencies and operating systems (including version numbers) can be found in the end of `RNAseq.html`, `Proteomics.html`, `Metabolomics.html`. There are no other non-standard hardware requirements.
+Software dependencies and operating systems (including version numbers) can be found in the end of `RNAseq.html`, `Proteomics.html`, `Metabolomics.html`. There are no other non-standard hardware requirements and to run the code one requires only a standard computer with enough RAM to support the in-memory operations.
 
 General information of the system the code was run on:
 ```
